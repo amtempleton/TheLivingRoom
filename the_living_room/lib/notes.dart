@@ -39,8 +39,7 @@ class _NotesListState extends State<NotesList> {
     setState((){ loading = false; });
     });
 
-    return
-    houseID;
+    return houseID;
   }
 
   void addNoteItem(String inputTitle, inputNote) async {
@@ -61,14 +60,12 @@ class _NotesListState extends State<NotesList> {
 
     firestoreInstance.collection("household").doc(householdID)
         .collection("notes")
-        .add(
-    {
-    "Date": time,
-    "Note": inputNote,
-    "Title": inputTitle,
-    "User": name
-    }
-    );
+        .add({
+          "Date": time,
+          "Note": inputNote,
+          "Title": inputTitle,
+          "User": name
+        });
   } // End of addTodoItem
 
   Future<void> _showMyDialog() async {
